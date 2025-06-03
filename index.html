@@ -3,474 +3,894 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ariel Chelo Jurado – Ingeniería en Sistemas</title>
-
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
+  <title>CV - Ariel Sempai | Ingeniero en Software</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* ================== VARIABLES ================== */
     :root {
-      --primary: #1d4ed8;       /* Azul confiable */
-      --secondary: #2563eb;     /* Azul un poco más vivo */
-      --dark: #111827;          /* Gris muy oscuro para textos */
-      --gray-light: #f3f4f6;     /* Fondo general suave */
-      --gray-lighter: #ffffff;  /* Blancos de tarjetas */
-      --text-base: #374151;     /* Gris oscuro para párrafos */
-      --transition: 0.3s ease;
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --accent: #4cc9f0;
+      --dark: #1e1e2f;
+      --darker: #121220;
+      --light: #f8f9fa;
+      --gray: #8a8a9e;
+      --card-bg: #252540;
+      --success: #4ade80;
     }
-
-    /* ================== RESET BÁSICO ================== */
+    
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
+    
     body {
-      font-family: "Poppins", sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--darker), var(--dark));
+      color: var(--light);
+      overflow-x: hidden;
       line-height: 1.6;
-      color: var(--text-base);
-      background-color: var(--gray-light);
     }
-
-    a {
-      text-decoration: none;
-      transition: color var(--transition);
-    }
-    a:hover {
-      color: var(--secondary);
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* ================== CONTENEDORES GENERALES ================== */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    section {
-      margin: 3rem 0;
-    }
-
-    h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    h2::after {
-      content: "";
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 50px;
-      height: 4px;
-      background-color: var(--secondary);
-      border-radius: 2px;
-    }
-
-    p {
-      color: var(--text-base);
-      margin-bottom: 1rem;
-    }
-
-    /* ================== HEADER ================== */
-    header {
-      background-color: var(--dark);
-      color: #ffffff;
-      padding: 2rem 0;
-    }
-
-    .profile-container {
+    
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(30, 30, 47, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    /* Foto circular */
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid var(--secondary);
-      transition: transform var(--transition);
-    }
-    .profile-img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .contact-info {
-      flex: 1;
-      padding-left: 1.5rem;
-      min-width: 200px;
-    }
-
-    .contact-info h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-      color: #ffffff;
-    }
-
-    .contact-info .subtitle {
-      font-size: 1.1rem;
-      color: #d1d5db;
-      margin-bottom: 1.2rem;
-      font-weight: 300;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .contact-links a {
-      background-color: var(--secondary);
-      color: #ffffff;
-      padding: 0.6rem 1rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      display: flex;
       align-items: center;
-      gap: 0.4rem;
-      font-weight: 500;
-      transition: background-color var(--transition), transform var(--transition);
     }
-
-    .contact-links a:hover {
-      background-color: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-
-    /* ================== NAVEGACIÓN INTERNA ================== */
-    nav {
-      margin-top: 1.5rem;
-    }
-    nav ul {
+    
+    .nav-links {
       display: flex;
       gap: 2rem;
-      justify-content: center;
     }
-    nav ul li {
-      list-style: none;
-    }
-    nav ul li a {
-      color: #d1d5db;
+    
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
       font-weight: 500;
-      transition: color var(--transition);
+      position: relative;
+      padding: 0.5rem 0;
+      transition: color 0.3s;
     }
-    nav ul li a:hover {
-      color: #ffffff;
+    
+    .nav-links a:hover {
+      color: var(--accent);
     }
-
-    /* ================== SECCIONES ================== */
-    /* Estilo común para cada tarjeta o “card” */
-    .card {
-      background-color: var(--gray-lighter);
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      padding: 1.5rem;
-      transition: transform var(--transition), box-shadow var(--transition);
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--accent);
+      transition: width 0.3s ease;
     }
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    
+    .nav-links a:hover::after {
+      width: 100%;
     }
-
-    /* ------------- SOBRE MÍ ------------- */
-    #about p {
-      font-size: 1rem;
-      color: var(--text-base);
+    
+    /* Header/Hero Section */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 120px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-
-    /* ------------- EDUCACIÓN ------------- */
-    .education-item {
-      margin-bottom: 1.5rem;
+    
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
-    .education-item h3 {
-      font-size: 1.3rem;
-      color: var(--dark);
-      margin-bottom: 0.4rem;
+    
+    .header-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease-out;
     }
-    .education-item p {
-      color: var(--text-base);
-      margin-bottom: 0.3rem;
-      font-size: 0.95rem;
+    
+    .header-content p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-out 0.2s;
+      animation-fill-mode: both;
     }
-
-    /* ------------- HABILIDADES ------------- */
-    .skills-grid {
+    
+    .tagline {
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 0.5rem 1.5rem;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      animation: fadeInUp 1s ease-out 0.4s;
+      animation-fill-mode: both;
+    }
+    
+    .header-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+      background: 
+        radial-gradient(circle at 20% 30%, var(--accent), transparent 25%),
+        radial-gradient(circle at 80% 70%, var(--primary), transparent 30%);
+      z-index: 1;
+    }
+    
+    /* Main Sections */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, var(--accent), var(--primary));
+      border-radius: 2px;
+    }
+    
+    /* Cards */
+    .cards-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
-    .skill-category h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--secondary);
-      margin-bottom: 0.6rem;
+    
+    .card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(76, 201, 240, 0.1);
     }
-    .skill-category p {
-      font-size: 0.95rem;
-      margin-bottom: 0.4rem;
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
-
-    /* ------------- PROYECTOS ------------- */
-    .projects-grid {
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, var(--accent), var(--primary));
+    }
+    
+    /* About Section */
+    .about-content {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .profile-img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      border: 5px solid var(--card-bg);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .profile-img .initials {
+      font-size: 6rem;
+      font-weight: 700;
+      color: white;
+    }
+    
+    /* Skills Section */
+    .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
-    .project-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
-      color: var(--dark);
+    
+    .skill-category h3 {
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
     }
-    .tech-stack {
+    
+    .skill-item {
+      margin-bottom: 1.5rem;
+    }
+    
+    .skill-info {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin: 0.6rem 0 1rem;
-    }
-    .tech-badge {
-      background-color: #dbeafe;
-      color: var(--secondary);
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: background-color var(--transition);
-    }
-    .tech-badge:hover {
-      background-color: #bfdbfe;
-    }
-    .project-card p {
-      font-size: 0.95rem;
+      justify-content: space-between;
       margin-bottom: 0.5rem;
     }
-
-    /* ------------- CERTIFICACIONES ------------- */
-    .certification-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.3rem;
-      color: var(--dark);
+    
+    .skill-bar {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
     }
-    .certification-item p {
-      font-size: 0.95rem;
-      color: var(--text-base);
+    
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(to right, var(--accent), var(--primary));
+      border-radius: 5px;
     }
-
-    /* ================== FOOTER ================== */
-    footer {
-      background-color: var(--dark);
-      color: #d1d5db;
-      text-align: center;
-      padding: 1.5rem 0;
-      margin-top: 3rem;
+    
+    /* Projects Section */
+    .project-card {
       position: relative;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
-    .back-to-top {
+    
+    .project-img {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      transition: transform 0.5s;
+    }
+    
+    .project-card:hover .project-img {
+      transform: scale(1.1);
+    }
+    
+    .project-overlay {
       position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: var(--secondary);
-      color: #ffffff;
-      padding: 0.5rem 0.8rem;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 2rem;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      transform: translateY(100px);
+      transition: transform 0.5s;
+    }
+    
+    .project-card:hover .project-overlay {
+      transform: translateY(0);
+    }
+    
+    .project-overlay h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    
+    .project-tags {
+      display: flex;
+      gap: 0.5rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .tag {
+      background: rgba(76, 201, 240, 0.2);
+      color: var(--accent);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+    
+    /* Contact Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--card-bg);
       border-radius: 50%;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--accent);
     }
-    .back-to-top:hover {
-      transform: translateY(-50%) scale(1.1);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
-    .back-to-top:focus {
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .form-group label {
+      font-weight: 500;
+    }
+    
+    .form-control {
+      background: var(--card-bg);
+      border: none;
+      border-radius: 8px;
+      padding: 1rem;
+      color: var(--light);
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: border-color 0.3s;
+    }
+    
+    .form-control:focus {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
+      border-color: var(--accent);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .btn {
+      background: linear-gradient(to right, var(--accent), var(--primary));
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-family: 'Poppins', sans-serif;
+      align-self: flex-start;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+    }
+    
+    /* GitHub Section */
+    .github-section {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--darker), #0f0f1f);
+      border-radius: 20px;
+      margin: 2rem auto;
+      max-width: 800px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .github-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: 
+        radial-gradient(circle, rgba(67, 97, 238, 0.1) 0%, transparent 70%),
+        radial-gradient(circle at bottom right, rgba(76, 201, 240, 0.1) 0%, transparent 70%);
+      z-index: 0;
+    }
+    
+    .github-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .github-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+    
+    .github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent);
+      font-size: 1.5rem;
+      text-decoration: none;
+      margin-top: 1rem;
+      padding: 0.8rem 2rem;
+      background: rgba(76, 201, 240, 0.1);
+      border-radius: 50px;
+      transition: background 0.3s;
+    }
+    
+    .github-link:hover {
+      background: rgba(76, 201, 240, 0.2);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--darker);
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+      color: var(--gray);
+      margin-top: 4rem;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .social-link {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1.5rem;
+      transition: transform 0.3s, background 0.3s;
+    }
+    
+    .social-link:hover {
+      transform: translateY(-5px);
+      background: linear-gradient(to right, var(--accent), var(--primary));
+      color: white;
+    }
+    
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .header-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .header-content p {
+        font-size: 1.2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
-
 <body>
-  <!-- ================== HEADER ================== -->
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">AS</div>
+    <div class="nav-links">
+      <a href="#about">Sobre Mí</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#contact">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- Header/Hero Section -->
   <header>
-    <div class="container">
-      <div class="profile-container">
-        <!-- FOTO: Cambia "foto.jpg" por el nombre de tu imagen -->
-        <img
-          src="foto.jpg"
-          alt="Foto de Ariel Chelo Jurado"
-          class="profile-img"
-        />
-
-        <div class="contact-info">
-          <h1>Ariel Chelo Jurado</h1>
-          <p class="subtitle">Ingeniero en Sistemas Computacionales</p>
-
-          <div class="contact-links">
-            <a href="mailto:arielchel01@gmail.com">📧 arielchel01@gmail.com</a>
-            <a href="tel:+522441522395">📱 244-152-2395</a>
-            <a
-              href="https://www.linkedin.com/in/ariel-chelo-0540a7212/"
-              target="_blank"
-              >🌐 LinkedIn</a
-            >
-            <a href="#" id="githubLink">💻 GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- NAVEGACIÓN INTERNA (solo anclas) -->
-      <nav>
-        <ul>
-          <li><a href="#about">Sobre Mí</a></li>
-          <li><a href="#education">Educación</a></li>
-          <li><a href="#skills">Habilidades</a></li>
-          <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#certifications">Certificaciones</a></li>
-        </ul>
-      </nav>
+    <div class="header-bg"></div>
+    <div class="header-content">
+      <h1>Ariel Sempai</h1>
+      <p>Ingeniero en Software | Creatividad, tecnología y aprendizaje continuo</p>
+      <div class="tagline">Transformando ideas en soluciones digitales</div>
     </div>
   </header>
 
-  <!-- ================== SECCIONES PRINCIPALES ================== -->
-  <main class="container">
-    <!-- ========== SOBRE MÍ ========== -->
-    <section id="about">
-      <h2>Sobre Mí</h2>
-      <p>
-        Ingeniero en Sistemas próximo a egresar con experiencia en desarrollo
-        web y proyectos innovadores de visión por computadora. Busco realizar
-        mi residencia profesional en áreas de desarrollo web, ciberseguridad,
-        redes o programación móvil. Comprometido con implementar soluciones
-        tecnológicas con impacto social utilizando Python, Node.js y AWS.
-      </p>
-    </section>
-
-    <!-- ========== EDUCACIÓN ========== -->
-    <section id="education">
-      <h2>Educación</h2>
-      <div class="education-item card">
-        <h3>Instituto Tecnológico Superior de Atlixco</h3>
-        <p><strong>Ingeniería en Sistemas Computacionales</strong> | Agosto 2020 – Presente</p>
-        <p>Especialización en tecnologías web y computación en la nube.</p>
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section-title">Sobre Mí</h2>
+    <div class="about-content animate-on-scroll">
+      <div class="profile-img">
+        <div class="initials">AS</div>
       </div>
-    </section>
-
-    <!-- ========== HABILIDADES TÉCNICAS ========== -->
-    <section id="skills">
-      <h2>Habilidades Técnicas</h2>
-      <div class="skills-grid">
-        <div class="skill-category card">
-          <h3>Lenguajes de Programación</h3>
-          <p>Python (Avanzado)</p>
-          <p>JavaScript (Intermedio)</p>
-          <p>HTML &amp; CSS (Intermedio)</p>
-        </div>
-        <div class="skill-category card">
-          <h3>Frameworks &amp; Herramientas</h3>
-          <p>Node.js &amp; Express.js</p>
-          <p>AWS (EC2, RDS, S3)</p>
-          <p>Docker &amp; Git (Control de versiones)</p>
-        </div>
-        <div class="skill-category card">
-          <h3>Especialidades</h3>
-          <p>Visión por Computadora (OpenCV)</p>
-          <p>Bases de Datos SQL &amp; NoSQL</p>
-          <p>Desarrollo Web Full Stack</p>
-        </div>
+      <div class="about-text">
+        <p>
+          Soy estudiante próximo a egresar de Ingeniería en Software. Busco realizar mi residencia profesional y adquirir más experiencia en el mundo de la tecnología. Me apasiona aprender nuevas herramientas, desarrollar soluciones, innovar con IA, explorar lenguajes y metodologías que permitan construir software, aplicaciones o sistemas creativos, útiles y transformadores.
+        </p>
+        <p style="margin-top: 1.5rem;">
+          Mi enfoque combina pensamiento creativo con habilidades técnicas sólidas, permitiéndome abordar problemas complejos desde múltiples perspectivas. Estoy comprometido con la creación de soluciones tecnológicas que tengan un impacto positivo en la sociedad.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ========== PROYECTOS DESTACADOS ========== -->
-    <section id="projects">
-      <h2>Proyectos Destacados</h2>
-      <div class="projects-grid">
-        <div class="project-card card">
-          <h3>Traductor de Lengua de Señas Mexicana</h3>
-          <div class="tech-stack">
-            <span class="tech-badge">Python</span>
-            <span class="tech-badge">OpenCV</span>
-            <span class="tech-badge">Visión por Computadora</span>
-            <span class="tech-badge">Realidad Aumentada</span>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2 class="section-title">Habilidades</h2>
+    <div class="skills-grid">
+      <div class="skill-category animate-on-scroll">
+        <h3><i class="fas fa-people-arrows"></i> Habilidades Blandas</h3>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Trabajo en equipo</span>
+            <span>95%</span>
           </div>
-          <p>
-            Sistema de reconocimiento de señas mediante visión artificial que
-            detecta movimientos manuales y los traduce en texto en tiempo real.
-          </p>
-          <p>
-            <strong>Logros:</strong> Implementación de algoritmos para 30+ señas
-            básicas con 85 % de precisión.
-          </p>
-        </div>
-
-        <div class="project-card card">
-          <h3>Plataforma Cloud para Gestión Empresarial</h3>
-          <div class="tech-stack">
-            <span class="tech-badge">Node.js</span>
-            <span class="tech-badge">AWS</span>
-            <span class="tech-badge">PostgreSQL</span>
-            <span class="tech-badge">JavaScript</span>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 95%"></div>
           </div>
-          <p>
-            Arquitectura serverless para un sistema de gestión con panel
-            administrativo y base de datos en la nube.
-          </p>
-          <p>
-            <strong>Logros:</strong> Reducción de costos de infraestructura en
-            un 25 % para clientes PYMES.
-          </p>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Adaptabilidad</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Aprendizaje continuo</span>
+            <span>98%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 98%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Resolución de problemas</span>
+            <span>92%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 92%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Comunicación efectiva</span>
+            <span>88%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 88%"></div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- ========== CERTIFICACIONES ========== -->
-    <section id="certifications">
-      <h2>Certificaciones</h2>
-      <div class="certification-item card">
-        <h3>Cisco Networking Academy</h3>
-        <p>Introducción a la Ciberseguridad | 2023</p>
+      
+      <div class="skill-category animate-on-scroll">
+        <h3><i class="fas fa-laptop-code"></i> Tecnologías & Herramientas</h3>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Python</span>
+            <span>85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Visual Studio Code</span>
+            <span>90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>MongoDB Atlas</span>
+            <span>80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 80%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Firebase</span>
+            <span>75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>APIs IBM (voz/texto)</span>
+            <span>78%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 78%"></div>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
+      
+      <div class="skill-category animate-on-scroll">
+        <h3><i class="fas fa-language"></i> Idiomas</h3>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Español (Nativo)</span>
+            <span>100%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 100%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info">
+            <span>Inglés (B1)</span>
+            <span>65%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 65%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- ================== FOOTER ================== -->
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 class="section-title">Proyectos Destacados</h2>
+    <div class="cards-container">
+      <div class="project-card animate-on-scroll">
+        <div class="project-img">
+          <i class="fas fa-hands"></i>
+        </div>
+        <div class="project-overlay">
+          <h3>Sistema de Lenguaje de Señas Mexicana con RA</h3>
+          <p>Proyecto que utiliza tecnología de Realidad Aumentada para traducir lenguaje de señas mexicana en tiempo real.</p>
+          <div class="project-tags">
+            <span class="tag">Realidad Aumentada</span>
+            <span class="tag">Inteligencia Artificial</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card animate-on-scroll">
+        <div class="project-img">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="project-overlay">
+          <h3>Sistema de Apartado de Salas</h3>
+          <p>Aplicación web para gestionar reservas de salas en el edificio de Centro de Cómputo del instituto.</p>
+          <div class="project-tags">
+            <span class="tag">Web App</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub Section -->
+  <section class="github-section" id="github">
+    <div class="github-content">
+      <div class="github-icon">
+        <i class="fab fa-github"></i>
+      </div>
+      <h2>Mi Repositorio de Proyectos</h2>
+      <p>Explora mis proyectos de código abierto, contribuciones y experimentos tecnológicos</p>
+      <a href="https://github.com/Ariel-Sempai" class="github-link" target="_blank">
+        <i class="fab fa-github"></i> https://github.com/Ariel-Sempai
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Contacto</h2>
+    <div class="contact-container">
+      <div class="contact-info animate-on-scroll">
+        <h3>¿Interesado en trabajar juntos?</h3>
+        <p>Estoy abierto a oportunidades de residencia profesional, colaboraciones en proyectos innovadores o cualquier propuesta relacionada con el desarrollo de software.</p>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p>ariel.sempai@ejemplo.com</p>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <h4>Ubicación</h4>
+            <p>Ciudad de México, México</p>
+          </div>
+        </div>
+        
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <h4>Teléfono</h4>
+            <p>+52 55 1234 5678</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form animate-on-scroll">
+        <h3>Enviar un mensaje</h3>
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" class="form-control" placeholder="Tu nombre">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" placeholder="tu@email.com">
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" class="form-control" placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+        <button class="btn">Enviar Mensaje</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Ariel Chelo Jurado. Todos los derechos reservados.</p>
-    <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-      ↑
-    </button>
+    <div class="social-links">
+      <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+    </div>
+    <p>© 2025 Ariel Sempai | CV Profesional Interactivo</p>
+    <p style="margin-top: 0.5rem;">Diseñado con pasión y creatividad</p>
   </footer>
 
-  <!-- ================== SCRIPTS ================== -->
   <script>
-    // GitHub dinámico: solicita usuario y redirige a su perfil
-    document.getElementById("githubLink").addEventListener("click", function (e) {
-      e.preventDefault();
-      const user = prompt("Ingresa tu nombre de usuario de GitHub:");
-      if (!user) return;
-      window.open(`https://github.com/${user}`, "_blank");
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+      
+      // Smooth scrolling for navigation
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Form submission
+      const contactForm = document.querySelector('.contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');
+          contactForm.reset();
+        });
+      }
     });
   </script>
 </body>
