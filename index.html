@@ -17,6 +17,7 @@
       --gray: #8a8a9e;
       --card-bg: #252540;
       --success: #4ade80;
+      --medical: #4ade80;
     }
     
     * {
@@ -261,7 +262,6 @@
     
     .skill-progress {
       height: 100%;
-      background: linear-gradient(to right, var(--accent), var(--primary));
       border-radius: 5px;
     }
     
@@ -277,7 +277,6 @@
     .project-img {
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -326,11 +325,50 @@
       font-size: 0.8rem;
     }
     
+    .medical-bg {
+      background: linear-gradient(135deg, var(--medical), #2a8c55);
+    }
+    
+    .sign-bg {
+      background: linear-gradient(135deg, #4361ee, #3f37c9);
+    }
+    
+    .calendar-bg {
+      background: linear-gradient(135deg, #f72585, #b5179e);
+    }
+    
+    /* GitHub Section (Minimizado) */
+    .github-section {
+      text-align: center;
+      padding: 2rem;
+      background: var(--darker);
+      border-radius: 20px;
+      margin: 2rem auto;
+      max-width: 400px;
+    }
+    
+    .github-link-min {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent);
+      font-size: 1.2rem;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      background: rgba(76, 201, 240, 0.1);
+      border-radius: 50px;
+      transition: background 0.3s;
+    }
+    
+    .github-link-min:hover {
+      background: rgba(76, 201, 240, 0.2);
+    }
+    
     /* Contact Section */
     .contact-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
     
     .contact-info {
@@ -355,117 +393,6 @@
       justify-content: center;
       font-size: 1.5rem;
       color: var(--accent);
-    }
-    
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    
-    .form-group label {
-      font-weight: 500;
-    }
-    
-    .form-control {
-      background: var(--card-bg);
-      border: none;
-      border-radius: 8px;
-      padding: 1rem;
-      color: var(--light);
-      font-family: 'Poppins', sans-serif;
-      font-size: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: border-color 0.3s;
-    }
-    
-    .form-control:focus {
-      outline: none;
-      border-color: var(--accent);
-    }
-    
-    textarea.form-control {
-      min-height: 150px;
-      resize: vertical;
-    }
-    
-    .btn {
-      background: linear-gradient(to right, var(--accent), var(--primary));
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-      font-family: 'Poppins', sans-serif;
-      align-self: flex-start;
-    }
-    
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
-    }
-    
-    /* GitHub Section */
-    .github-section {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, var(--darker), #0f0f1f);
-      border-radius: 20px;
-      margin: 2rem auto;
-      max-width: 800px;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .github-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: 
-        radial-gradient(circle, rgba(67, 97, 238, 0.1) 0%, transparent 70%),
-        radial-gradient(circle at bottom right, rgba(76, 201, 240, 0.1) 0%, transparent 70%);
-      z-index: 0;
-    }
-    
-    .github-content {
-      position: relative;
-      z-index: 2;
-    }
-    
-    .github-icon {
-      font-size: 4rem;
-      margin-bottom: 1.5rem;
-      color: var(--accent);
-    }
-    
-    .github-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--accent);
-      font-size: 1.5rem;
-      text-decoration: none;
-      margin-top: 1rem;
-      padding: 0.8rem 2rem;
-      background: rgba(76, 201, 240, 0.1);
-      border-radius: 50px;
-      transition: background 0.3s;
-    }
-    
-    .github-link:hover {
-      background: rgba(76, 201, 240, 0.2);
     }
     
     /* Footer */
@@ -562,13 +489,17 @@
       .section-title {
         font-size: 2rem;
       }
+      
+      .project-card {
+        height: 250px;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Navigation -->
   <nav class="navbar">
-    <div class="logo">AS</div>
+    <div class="logo">AC</div>
     <div class="nav-links">
       <a href="#about">Sobre Mí</a>
       <a href="#skills">Habilidades</a>
@@ -581,7 +512,7 @@
   <header>
     <div class="header-bg"></div>
     <div class="header-content">
-      <h1>Ariel Sempai</h1>
+      <h1>Ariel Chelo Jurado</h1>
       <p>Ingeniero en Software | Creatividad, tecnología y aprendizaje continuo</p>
       <div class="tagline">Transformando ideas en soluciones digitales</div>
     </div>
@@ -592,7 +523,7 @@
     <h2 class="section-title">Sobre Mí</h2>
     <div class="about-content animate-on-scroll">
       <div class="profile-img">
-        <div class="initials">AS</div>
+        <div class="initials">AC</div>
       </div>
       <div class="about-text">
         <p>
@@ -617,7 +548,7 @@
             <span>95%</span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" style="width: 95%"></div>
+            <div class="skill-progress" style="width: 95%; background: linear-gradient(to right, var(--accent), var(--primary));"></div>
           </div>
         </div>
         <div class="skill-item">
@@ -626,7 +557,7 @@
             <span>90%</span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" style="width: 90%"></div>
+            <div class="skill-progress" style="width: 90%; background: linear-gradient(to right, var(--accent), var(--primary));"></div>
           </div>
         </div>
         <div class="skill-item">
@@ -635,25 +566,25 @@
             <span>98%</span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" style="width: 98%"></div>
+            <div class="skill-progress" style="width: 98%; background: linear-gradient(to right, var(--accent), var(--primary));"></div>
           </div>
         </div>
         <div class="skill-item">
           <div class="skill-info">
             <span>Resolución de problemas</span>
-            <span>92%</span>
+            <span>85%</span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" style="width: 92%"></div>
+            <div class="skill-progress" style="width: 85%; background: linear-gradient(to right, var(--accent), var(--primary));"></div>
           </div>
         </div>
         <div class="skill-item">
           <div class="skill-info">
             <span>Comunicación efectiva</span>
-            <span>88%</span>
+            <span>80%</span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" style="width: 88%"></div>
+            <div class="skill-progress" style="width: 80%; background: linear-gradient(to right, var(--accent), var(--primary));"></div>
           </div>
         </div>
       </div>
@@ -666,7 +597,7 @@
             <span>85%</span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" style="width: 85%"></div>
+            <div class="skill-progress" style="width: 85%; background: linear-gradient(to right, var(--accent), var(--primary));"></div>
           </div>
         </div>
         <div class="skill-item">
@@ -675,7 +606,7 @@
             <span>90%</span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" style="width: 90%"></div>
+            <div class="skill-progress" style="width: 90%; background: linear-gradient(to right, var(--accent), var(--primary));"></div>
           </div>
         </div>
         <div class="skill-item">
@@ -684,7 +615,7 @@
             <span>80%</span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" style="width: 80%"></div>
+            <div class="skill-progress" style="width: 80%; background: linear-gradient(to right, var(--accent), var(--primary));"></div>
           </div>
         </div>
         <div class="skill-item">
@@ -693,7 +624,7 @@
             <span>75%</span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" style="width: 75%"></div>
+            <div class="skill-progress" style="width: 75%; background: linear-gradient(to right, var(--accent), var(--primary));"></div>
           </div>
         </div>
         <div class="skill-item">
@@ -702,7 +633,7 @@
             <span>78%</span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" style="width: 78%"></div>
+            <div class="skill-progress" style="width: 78%; background: linear-gradient(to right, var(--accent), var(--primary));"></div>
           </div>
         </div>
       </div>
@@ -715,16 +646,16 @@
             <span>100%</span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" style="width: 100%"></div>
+            <div class="skill-progress" style="width: 100%; background: linear-gradient(to right, var(--accent), var(--primary));"></div>
           </div>
         </div>
         <div class="skill-item">
           <div class="skill-info">
             <span>Inglés (B1)</span>
-            <span>65%</span>
+            <span>75%</span>
           </div>
           <div class="skill-bar">
-            <div class="skill-progress" style="width: 65%"></div>
+            <div class="skill-progress" style="width: 75%; background: linear-gradient(to right, var(--accent), var(--primary));"></div>
           </div>
         </div>
       </div>
@@ -736,7 +667,7 @@
     <h2 class="section-title">Proyectos Destacados</h2>
     <div class="cards-container">
       <div class="project-card animate-on-scroll">
-        <div class="project-img">
+        <div class="project-img sign-bg">
           <i class="fas fa-hands"></i>
         </div>
         <div class="project-overlay">
@@ -751,7 +682,23 @@
       </div>
       
       <div class="project-card animate-on-scroll">
-        <div class="project-img">
+        <div class="project-img medical-bg">
+          <i class="fas fa-stethoscope"></i>
+        </div>
+        <div class="project-overlay">
+          <h3>Chatbot Analizador de Enfermedades</h3>
+          <p>Sistema desarrollado en equipo durante el 5to semestre que analiza síntomas para detectar posibles enfermedades y ofrece recomendaciones de prevención.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Chatbot</span>
+            <span class="tag">IA</span>
+            <span class="tag">Salud</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card animate-on-scroll">
+        <div class="project-img calendar-bg">
           <i class="fas fa-calendar-alt"></i>
         </div>
         <div class="project-overlay">
@@ -767,18 +714,11 @@
     </div>
   </section>
 
-  <!-- GitHub Section -->
+  <!-- GitHub Section (Minimizado) -->
   <section class="github-section" id="github">
-    <div class="github-content">
-      <div class="github-icon">
-        <i class="fab fa-github"></i>
-      </div>
-      <h2>Mi Repositorio de Proyectos</h2>
-      <p>Explora mis proyectos de código abierto, contribuciones y experimentos tecnológicos</p>
-      <a href="https://github.com/Ariel-Sempai" class="github-link" target="_blank">
-        <i class="fab fa-github"></i> https://github.com/Ariel-Sempai
-      </a>
-    </div>
+    <a href="https://github.com/Ariel-Sempai" class="github-link-min" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
   </section>
 
   <!-- Contact Section -->
@@ -795,7 +735,7 @@
           </div>
           <div>
             <h4>Email</h4>
-            <p>ariel.sempai@ejemplo.com</p>
+            <p>arielchelo19@gmail.com</p>
           </div>
         </div>
         
@@ -805,7 +745,7 @@
           </div>
           <div>
             <h4>Ubicación</h4>
-            <p>Ciudad de México, México</p>
+            <p>Calle Principal Mz 4 Lt 14, Colonia Maravillas No 042,<br>74360, Atlixco Puebla, México</p>
           </div>
         </div>
         
@@ -815,26 +755,9 @@
           </div>
           <div>
             <h4>Teléfono</h4>
-            <p>+52 55 1234 5678</p>
+            <p>+52 244 152 2395</p>
           </div>
         </div>
-      </div>
-      
-      <div class="contact-form animate-on-scroll">
-        <h3>Enviar un mensaje</h3>
-        <div class="form-group">
-          <label for="name">Nombre</label>
-          <input type="text" id="name" class="form-control" placeholder="Tu nombre">
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" class="form-control" placeholder="tu@email.com">
-        </div>
-        <div class="form-group">
-          <label for="message">Mensaje</label>
-          <textarea id="message" class="form-control" placeholder="Escribe tu mensaje aquí..."></textarea>
-        </div>
-        <button class="btn">Enviar Mensaje</button>
       </div>
     </div>
   </section>
@@ -842,12 +765,11 @@
   <!-- Footer -->
   <footer>
     <div class="social-links">
-      <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/ariel-chelo-0540a7212/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/arielchelo.123?igsh=MXVjeWRpd2wxcm5xYw==" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/Ariel-Sempai" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
     </div>
-    <p>© 2025 Ariel Sempai | CV Profesional Interactivo</p>
+    <p>© 2025 Ariel Chelo Jurado | CV Profesional Interactivo</p>
     <p style="margin-top: 0.5rem;">Diseñado con pasión y creatividad</p>
   </footer>
 
@@ -881,16 +803,6 @@
           }
         });
       });
-      
-      // Form submission
-      const contactForm = document.querySelector('.contact-form');
-      if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');
-          contactForm.reset();
-        });
-      }
     });
   </script>
 </body>
