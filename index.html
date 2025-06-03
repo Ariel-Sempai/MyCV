@@ -509,8 +509,145 @@
   </nav>
 
   <!-- Header/Hero Section -->
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Ariel Chelo Jurado | Ingeniero en Software</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4361ee; 
+      --secondary: #3f37c9;
+      --accent: #4cc9f0;
+      --dark: #1e1e2f;
+      --darker: #121220;
+      --light: #f8f9fa;
+      --gray: #8a8a9e;
+      --card-bg: #252540;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--darker), var(--dark));
+      color: var(--light);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(30, 30, 47, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(to right, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 120px 20px 80px;
+      text-align: center;
+    }
+    .header-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+    .tagline {
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 0.5rem 1.5rem;
+      border-radius: 30px;
+      font-size: 1.1rem;
+    }
+
+    /* About Section */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .profile-img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-text {
+      max-width: 600px;
+    }
+
+    /* Education Info */
+    .education-info {
+      margin-top: 1rem;
+      font-style: italic;
+      color: var(--gray);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .profile-img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <nav class="navbar">
+    <div class="logo">ACJ</div>
+    <div class="nav-links">
+      <a href="#about">Sobre Mí</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#contact">Contacto</a>
+    </div>
+  </nav>
+
+
   <header>
-    <div class="header-bg"></div>
     <div class="header-content">
       <h1>Ariel Chelo Jurado</h1>
       <p>Ingeniero en Software | Creatividad, tecnología y aprendizaje continuo</p>
@@ -518,12 +655,13 @@
     </div>
   </header>
 
-  <!-- About Section -->
+ 
   <section id="about">
     <h2 class="section-title">Sobre Mí</h2>
     <div class="about-content animate-on-scroll">
+      
       <div class="profile-img">
-        <div class="initials">AC</div>
+        <img src="img/perfil.jpg" alt="Foto de Ariel Chelo Jurado">
       </div>
       <div class="about-text">
         <p>
@@ -532,11 +670,19 @@
         <p style="margin-top: 1.5rem;">
           Mi enfoque combina pensamiento creativo con habilidades técnicas sólidas, permitiéndome abordar problemas complejos desde múltiples perspectivas. Estoy comprometido con la creación de soluciones tecnológicas que tengan un impacto positivo en la sociedad.
         </p>
+
+        
+        <div class="education-info">
+          <p><strong>Institución:</strong> Instituto Tecnológico Superior de Atlixco</p>
+          <p><strong>Carrera:</strong> Ingeniería en Software</p>
+          <p><strong>Inicio:</strong> Agosto 2020</p>
+          <p><strong>Fin:</strong> Presente</p>
+          <p><strong>Dirección:</strong> Prolongación Heliotropo 1201 Col. Vista Hermosa, C.P. 74218, Atlixco, Pue.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
   <section id="skills">
     <h2 class="section-title">Habilidades</h2>
     <div class="skills-grid">
@@ -662,7 +808,6 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects">
     <h2 class="section-title">Proyectos Destacados</h2>
     <div class="cards-container">
@@ -714,14 +859,14 @@
     </div>
   </section>
 
-  <!-- GitHub Section (Minimizado) -->
+
   <section class="github-section" id="github">
     <a href="https://github.com/Ariel-Sempai" class="github-link-min" target="_blank">
       <i class="fab fa-github"></i> GitHub
     </a>
   </section>
 
-  <!-- Contact Section -->
+
   <section id="contact">
     <h2 class="section-title">Contacto</h2>
     <div class="contact-container">
@@ -762,7 +907,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/ariel-chelo-0540a7212/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -774,7 +918,7 @@
   </footer>
 
   <script>
-    // Animation on scroll
+
     document.addEventListener('DOMContentLoaded', function() {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -790,7 +934,7 @@
         observer.observe(el);
       });
       
-      // Smooth scrolling for navigation
+
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
