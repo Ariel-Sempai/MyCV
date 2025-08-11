@@ -1,4 +1,4 @@
-    :root {
+:root {
       --primary: #4361ee;
       --secondary: #3f37c9;
       --accent: #4cc9f0;
@@ -23,7 +23,7 @@
       color: #333;
       line-height: 1.6;
       padding: 20px;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -86,7 +86,7 @@
 
     .main-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr;
       gap: 30px;
       margin-bottom: 30px;
     }
@@ -262,44 +262,37 @@
     .project-tags {
       display: flex;
       gap: 8px;
-      margin: 15px 0;
+      margin-top: 10px;
       flex-wrap: wrap;
     }
 
     .tag {
-      background: rgba(76, 201, 240, 0.15);
-      color: var(--accent);
-      padding: 5px 12px;
-      border-radius: 20px;
+      background: #e0e7ff;
+      color: var(--primary);
+      padding: 5px 10px;
+      border-radius: 5px;
       font-size: 0.85rem;
-      font-weight: 500;
     }
 
     .certification-card {
       display: flex;
+      align-items: flex-start;
       gap: 15px;
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eee;
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 3px solid var(--accent);
     }
 
     .certification-card:last-child {
       margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
     }
 
     .cert-icon {
-      width: 50px;
-      height: 50px;
-      background: rgba(76, 201, 240, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-size: 2.5rem;
+      color: var(--primary);
       flex-shrink: 0;
-      color: var(--accent);
-      font-size: 1.3rem;
     }
 
     .cert-content {
@@ -308,104 +301,100 @@
 
     .cert-title {
       font-weight: 600;
-      color: var(--primary);
+      color: var(--dark);
       margin-bottom: 5px;
+    }
+
+    .cert-content div {
+      font-size: 0.9rem;
+      margin-bottom: 3px;
+      color: #555;
+    }
+
+    .cert-content i {
+      margin-right: 5px;
+      color: var(--gray);
     }
 
     .contact-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 20px;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 12px;
+      gap: 15px;
       background: #f8f9fa;
+      padding: 15px;
       border-radius: 8px;
+      border: 1px solid #eee;
     }
 
     .contact-icon {
-      width: 40px;
-      height: 40px;
-      background: rgba(76, 201, 240, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 1.1rem;
+      font-size: 1.8rem;
+      color: var(--primary);
       flex-shrink: 0;
     }
 
     .contact-details h4 {
+      margin: 0;
+      color: var(--dark);
+    }
+
+    .contact-details p {
+      margin: 0;
       font-size: 0.9rem;
-      color: var(--gray);
-      margin-bottom: 3px;
+      color: #555;
     }
 
     .footer {
-      background: var(--dark);
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      background: var(--darker);
       color: white;
       border-radius: 10px;
-      padding: 25px;
-      text-align: center;
-      margin-top: 20px;
+      font-size: 0.9rem;
     }
 
     .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .social-link {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .social-link:hover {
       color: var(--accent);
-      font-size: 1.2rem;
     }
 
     .copyright {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.95rem;
       margin-top: 10px;
+      color: rgba(255, 255, 255, 0.7);
     }
 
+    /* Responsive Design */
     @media (max-width: 768px) {
       .main-container {
         grid-template-columns: 1fr;
       }
-      
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-      
-      .header {
-        padding: 30px 20px;
-      }
-      
-      .name {
-        font-size: 2.2rem;
-      }
-    }
 
-    @media (max-width: 480px) {
       .about-content {
         flex-direction: column;
-        align-items: center;
         text-align: center;
       }
-      
+
       .profile-img {
         margin-bottom: 15px;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
       }
     }
